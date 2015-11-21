@@ -31,6 +31,7 @@ class PagesControllerTest extends IntegrationTestCase
     public function testHoge()
     {
        $this->assertTrue(true);
+       $this->assertFalse(false);
     }
 
     /**
