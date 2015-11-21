@@ -51,6 +51,9 @@ class CreateJpa9Players extends AbstractMigration
             'default' => null,
             'null' => false,
         ]);
+        $table->addIndex(['user_id', 'jpa9_game_id'], [
+            'unique' => true]
+        );
         $table->create();
     }
 }

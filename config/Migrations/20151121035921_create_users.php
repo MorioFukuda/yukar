@@ -57,6 +57,9 @@ class CreateUsers extends AbstractMigration
             'default' => null,
             'null' => false,
         ]);
+        $table->addIndex(['account_id'], [
+            'unique' => true]
+        );
         $table->create();
     }
 }
