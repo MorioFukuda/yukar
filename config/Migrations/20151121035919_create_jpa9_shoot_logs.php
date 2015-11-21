@@ -13,11 +13,11 @@ class CreateJpa9ShootLogs extends AbstractMigration
     public function change()
     {
         $table = $this->table('jpa9_shoot_logs');
-        $table->addColumn('user_id', 'integer', [
+        $table->addColumn('jpa9_player_id', 'integer', [
             'default' => null,
             'limit' => 11,
             'null' => false,
-            'comment' => '参加者のuser_id',
+            'comment' => '参加者のplayer_id',
         ]);
         $table->addColumn('jpa9_game_id', 'integer', [
             'default' => null,
