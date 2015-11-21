@@ -1,7 +1,7 @@
 <?php
 use Migrations\AbstractMigration;
 
-class CreateJpa9Games extends AbstractMigration
+class CreatePotPositions extends AbstractMigration
 {
     /**
      * Change Method.
@@ -12,16 +12,18 @@ class CreateJpa9Games extends AbstractMigration
      */
     public function change()
     {
-        $table = $this->table('jpa9_games');
-        $table->addColumn('title', 'string', [
+        $table = $this->table('pot_positions');
+        $table->addColumn('display_name', 'string', [
             'default' => null,
-            'comment' => 'ゲーム名',
             'limit' => 255,
-            'null' => true,
-        ]);
-        $table->addColumn('created', 'datetime', [
-            'default' => null,
             'null' => false,
+            'comment' => '表示用ポケット名',
+        ]);
+        $table->addColumn('type', 'integer', [
+            'default' => null,
+            'limit' => 11,
+            'null' => false,
+            'comment' => 'ポケット種別(1:コーナー, 2:サイド)',
         ]);
         $table->create();
     }

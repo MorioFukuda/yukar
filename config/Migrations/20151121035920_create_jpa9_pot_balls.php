@@ -17,21 +17,25 @@ class CreateJpa9PotBalls extends AbstractMigration
             'default' => null,
             'limit' => 11,
             'null' => false,
+            'comment' => 'ショットのID',
         ]);
-        $table->addColumn('user_id', 'integer', [
+        $table->addColumn('jpa9_player_id', 'integer', [
             'default' => null,
             'limit' => 11,
             'null' => false,
+            'comment' => 'ショットした人のプレイヤーID',
         ]);
         $table->addColumn('ball_number', 'integer', [
             'default' => null,
             'limit' => 11,
             'null' => false,
+            'comment' => 'ボールの番号',
         ]);
-        $table->addColumn('pot_position', 'integer', [
+        $table->addColumn('pot_position_id', 'integer', [
             'default' => null,
             'limit' => 11,
-            'null' => false,
+            'null' => true,
+            'comment' => 'ポケットした場所',
         ]);
         $table->addColumn('created', 'datetime', [
             'default' => null,

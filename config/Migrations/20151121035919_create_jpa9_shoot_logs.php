@@ -17,51 +17,62 @@ class CreateJpa9ShootLogs extends AbstractMigration
             'default' => null,
             'limit' => 11,
             'null' => false,
+            'comment' => '参加者のuser_id',
         ]);
         $table->addColumn('jpa9_game_id', 'integer', [
             'default' => null,
             'limit' => 11,
             'null' => false,
+            'comment' => '参加しているgame_id',
         ]);
-        $table->addColumn('lack', 'integer', [
+        $table->addColumn('rack', 'integer', [
             'default' => null,
             'limit' => 11,
             'null' => false,
+            'comment' => '何ラック目か',
         ]);
-        $table->addColumn('enninge', 'integer', [
+        $table->addColumn('inning', 'integer', [
             'default' => null,
             'limit' => 11,
             'null' => false,
-        ]);
-        $table->addColumn('score', 'integer', [
-            'default' => null,
-            'limit' => 11,
-            'null' => false,
+            'comment' => '何イニング目か',
         ]);
         $table->addColumn('in_a_row_count', 'integer', [
             'default' => null,
             'limit' => 11,
             'null' => false,
+            'comment' => '何連続目のショットか',
         ]);
-        $table->addColumn('is_safety', 'boolean', [
+        $table->addColumn('score', 'integer', [
             'default' => null,
+            'limit' => 11,
             'null' => false,
-        ]);
-        $table->addColumn('is_fall', 'boolean', [
-            'default' => null,
-            'null' => false,
+            'comment' => 'このショットで取得したスコア',
         ]);
         $table->addColumn('is_break', 'boolean', [
             'default' => null,
             'null' => false,
+            'comment' => 'ブレークショットかどうか',
         ]);
-        $table->addColumn('is_luck_end', 'boolean', [
+        $table->addColumn('is_safety', 'boolean', [
             'default' => null,
             'null' => false,
+            'comment' => 'セーフティーかどうか',
+        ]);
+        $table->addColumn('is_fall', 'boolean', [
+            'default' => null,
+            'null' => false,
+            'comment' => 'ファールかどうか',
         ]);
         $table->addColumn('is_turn_end', 'boolean', [
             'default' => null,
             'null' => false,
+            'comment' => '自分のターンが終了したかどうか',
+        ]);
+        $table->addColumn('is_ruck_end', 'boolean', [
+            'default' => null,
+            'null' => false,
+            'comment' => 'ラックが終了したかどうか',
         ]);
         $table->addColumn('created', 'datetime', [
             'default' => null,

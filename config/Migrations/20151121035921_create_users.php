@@ -13,20 +13,41 @@ class CreateUsers extends AbstractMigration
     public function change()
     {
         $table = $this->table('users');
-        $table->addColumn('name', 'string', [
+        $table->addColumn('display_name', 'string', [
             'default' => null,
             'limit' => 255,
             'null' => false,
+            'comment' => '表示用ユーザ名',
+        ]);
+        $table->addColumn('account_id', 'string', [
+            'default' => null,
+            'limit' => 255,
+            'null' => false,
+            'comment' => 'ユーザのアカウントID',
+        ]);
+        $table->addColumn('salt', 'string', [
+            'default' => null,
+            'limit' => 255,
+            'null' => false,
+            'comment' => 'パスワードの暗号化に使用するsalt',
+        ]);
+        $table->addColumn('password', 'string', [
+            'default' => null,
+            'limit' => 255,
+            'null' => false,
+            'comment' => 'パスワード(ハッシュ化後の値)',
         ]);
         $table->addColumn('email', 'string', [
             'default' => null,
             'limit' => 255,
-            'null' => false,
+            'null' => true,
+            'comment' => 'メールアドレス',
         ]);
         $table->addColumn('jpa_skill_level', 'integer', [
             'default' => null,
             'limit' => 11,
             'null' => false,
+            'comment' => 'スキルレベル',
         ]);
         $table->addColumn('created', 'datetime', [
             'default' => null,
