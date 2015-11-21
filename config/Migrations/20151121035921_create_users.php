@@ -19,11 +19,11 @@ class CreateUsers extends AbstractMigration
             'null' => false,
             'comment' => '表示用ユーザ名',
         ]);
-        $table->addColumn('account_id', 'string', [
+        $table->addColumn('account_name', 'string', [
             'default' => null,
             'limit' => 255,
             'null' => false,
-            'comment' => 'ユーザのアカウントID',
+            'comment' => 'ユーザのアカウント名',
         ]);
         $table->addColumn('salt', 'string', [
             'default' => null,
@@ -57,7 +57,7 @@ class CreateUsers extends AbstractMigration
             'default' => null,
             'null' => false,
         ]);
-        $table->addIndex(['account_id'], [
+        $table->addIndex(['account_name'], [
             'unique' => true]
         );
         $table->create();
