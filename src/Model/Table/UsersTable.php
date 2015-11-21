@@ -10,7 +10,6 @@ use Cake\Validation\Validator;
 /**
  * Users Model
  *
- * @property \Cake\ORM\Association\BelongsTo $Accounts
  * @property \Cake\ORM\Association\HasMany $Jpa9Players
  */
 class UsersTable extends Table
@@ -32,10 +31,6 @@ class UsersTable extends Table
 
         $this->addBehavior('Timestamp');
 
-        $this->belongsTo('Accounts', [
-            'foreignKey' => 'account_id',
-            'joinType' => 'INNER'
-        ]);
         $this->hasMany('Jpa9Players', [
             'foreignKey' => 'user_id'
         ]);
@@ -56,6 +51,11 @@ class UsersTable extends Table
         $validator
             ->requirePresence('display_name', 'create')
             ->notEmpty('display_name');
+
+        $validator
+            ->requirePresence('account_name', 'create')
+            ->notEmpty('account_name')
+            ->add('account_name', 'unique', ['rule' => 'validateUnique', 'provider' => 'table']);
 
         $validator
             ->requirePresence('salt', 'create')
@@ -87,7 +87,6 @@ class UsersTable extends Table
     public function buildRules(RulesChecker $rules)
     {
         $rules->add($rules->isUnique(['email']));
-        $rules->add($rules->existsIn(['account_id'], 'Accounts'));
         return $rules;
     }
 }

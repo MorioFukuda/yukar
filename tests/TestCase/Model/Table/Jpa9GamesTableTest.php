@@ -19,7 +19,10 @@ class Jpa9GamesTableTest extends TestCase
     public $fixtures = [
         'app.jpa9_games',
         'app.jpa9_players',
-        'app.jpa9_shoot_logs'
+        'app.users',
+        'app.jpa9_pot_balls',
+        'app.jpa9_shoot_logs',
+        'app.pocket_positions'
     ];
 
     /**

@@ -21,7 +21,8 @@ class Jpa9PlayersTableTest extends TestCase
         'app.users',
         'app.jpa9_games',
         'app.jpa9_shoot_logs',
-        'app.jpa9_pot_balls'
+        'app.jpa9_pot_balls',
+        'app.pocket_positions'
     ];
 
     /**

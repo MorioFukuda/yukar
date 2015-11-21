@@ -49,8 +49,8 @@ class Jpa9PlayersFixture extends TestFixture
             'skill_level' => 1,
             'point' => 1,
             'turn' => 1,
-            'created' => '2015-11-21 16:13:40',
-            'modified' => '2015-11-21 16:13:40'
+            'created' => '2015-11-21 17:49:00',
+            'modified' => '2015-11-21 17:49:00'
         ],
     ];
 }

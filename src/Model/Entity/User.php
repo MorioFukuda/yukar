@@ -8,8 +8,7 @@ use Cake\ORM\Entity;
  *
  * @property int $id
  * @property string $display_name
- * @property string $account_id
- * @property \App\Model\Entity\Account $account
+ * @property string $account_name
  * @property string $salt
  * @property string $password
  * @property string $email

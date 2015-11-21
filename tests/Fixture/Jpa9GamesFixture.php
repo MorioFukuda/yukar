@@ -39,7 +39,7 @@ class Jpa9GamesFixture extends TestFixture
         [
             'id' => 1,
             'title' => 'Lorem ipsum dolor sit amet',
-            'created' => '2015-11-21 16:13:40'
+            'created' => '2015-11-21 17:48:59'
         ],
     ];
 }

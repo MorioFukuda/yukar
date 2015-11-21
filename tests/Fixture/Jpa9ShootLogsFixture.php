@@ -59,7 +59,7 @@ class Jpa9ShootLogsFixture extends TestFixture
             'is_fall' => 1,
             'is_turn_end' => 1,
             'is_ruck_end' => 1,
-            'created' => '2015-11-21 16:13:41'
+            'created' => '2015-11-21 17:49:00'
         ],
     ];
 }
