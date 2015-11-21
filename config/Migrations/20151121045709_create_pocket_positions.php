@@ -1,7 +1,7 @@
 <?php
 use Migrations\AbstractMigration;
 
-class CreatePotPositions extends AbstractMigration
+class CreatePocketPositions extends AbstractMigration
 {
     /**
      * Change Method.
@@ -12,7 +12,7 @@ class CreatePotPositions extends AbstractMigration
      */
     public function change()
     {
-        $table = $this->table('pot_positions');
+        $table = $this->table('pocket_positions');
         $table->addColumn('display_name', 'string', [
             'default' => null,
             'limit' => 255,

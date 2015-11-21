@@ -31,7 +31,7 @@ class CreateJpa9PotBalls extends AbstractMigration
             'null' => false,
             'comment' => 'ボールの番号',
         ]);
-        $table->addColumn('pot_position_id', 'integer', [
+        $table->addColumn('pocket_position_id', 'integer', [
             'default' => null,
             'limit' => 11,
             'null' => true,
