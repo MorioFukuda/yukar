@@ -1,7 +1,7 @@
 <?php
 use Migrations\AbstractMigration;
 
-class CreateJpa9Players extends AbstractMigration
+class CreateUsers extends AbstractMigration
 {
     /**
      * Change Method.
@@ -12,23 +12,27 @@ class CreateJpa9Players extends AbstractMigration
      */
     public function change()
     {
-        $table = $this->table('jpa9_players');
-        $table->addColumn('user_id', 'integer', [
+        $table = $this->table('users');
+        $table->addColumn('name', 'string', [
             'default' => null,
-            'limit' => 11,
+            'limit' => 255,
             'null' => false,
         ]);
-        $table->addColumn('jpa9_game_id', 'integer', [
+        $table->addColumn('email', 'string', [
             'default' => null,
-            'limit' => 11,
+            'limit' => 255,
             'null' => false,
         ]);
-        $table->addColumn('turn', 'integer', [
+        $table->addColumn('jpa_skill_level', 'integer', [
             'default' => null,
             'limit' => 11,
             'null' => false,
         ]);
         $table->addColumn('created', 'datetime', [
+            'default' => null,
+            'null' => false,
+        ]);
+        $table->addColumn('modified', 'datetime', [
             'default' => null,
             'null' => false,
         ]);

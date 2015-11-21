@@ -33,7 +33,7 @@ class CreateJpa9ShootLogs extends AbstractMigration
             'limit' => 11,
             'null' => false,
         ]);
-        $table->addColumn('point', 'integer', [
+        $table->addColumn('score', 'integer', [
             'default' => null,
             'limit' => 11,
             'null' => false,
