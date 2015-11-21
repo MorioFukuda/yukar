@@ -1,26 +1,61 @@
-# CakePHP Application Skeleton
+# 開発環境構築
 
-[![Build Status](https://api.travis-ci.org/cakephp/app.png)](https://travis-ci.org/cakephp/app)
-[![License](https://poser.pugx.org/cakephp/app/license.svg)](https://packagist.org/packages/cakephp/app)
+## VirtualBoxとVagrantのインストール
 
-A skeleton for creating applications with [CakePHP](http://cakephp.org) 3.x.
+以下のバージョンでインストール
 
-The framework source code can be found here: [cakephp/cakephp](https://github.com/cakephp/cakephp).
+* VirtualBox 4.0 以上
+* Vagrant 1.6.0 以上
 
-## Installation
+## Cakeboxのインストール
 
-1. Download [Composer](http://getcomposer.org/doc/00-intro.md) or update `composer self-update`.
-2. Run `php composer.phar create-project --prefer-dist cakephp/app [app_name]`.
-
-If Composer is installed globally, run
-```bash
-composer create-project --prefer-dist cakephp/app [app_name]
+```
+$ git clone https://github.com/alt3/cakebox.git
+$ cd cakebox
+$ cp Cakebox.yaml.default Cakebox.yaml
+$ vagrant up
 ```
 
-You should now be able to visit the path to where you installed the app and see
-the setup traffic lights.
+## Cakeboxでアプリケーションを作成する
 
-## Configuration
+```
+$ vagrant ssh
+$ ssh-keygen
+$ ssh-add ~/.ssh/id_rsa.pub
+$ cd /home/vagrant/Apps
+$ cakebox application add yukar.app --source git@github.com:MorioFukuda/yukar.git --webroot /home/vagrant/Apps/yukar.app/webroot
+$ cd /home/vagrant/Apps/yukar.app/
+$ composer install
+$ vi /home/vagrant/Apps/yukar.app/config/app.php # 65行目のsaltを適当に変更
+```
 
-Read and edit `config/app.php` and setup the 'Datasources' and any other
-configuration relevant for your application.
+ローカルマシン
+```
+$ sudo vim /etc/hosts # 10.33.10.10 yukar.appを追加
+```
+
+ヒント
+```
+cakebox application addでコケる
+-> ssh周りがおかしいっぽい
+[Try]
+$ ssh git@github.comができるか
+
+[Solution] 
+ssh-keygen, ssh-add
+
+-> gitのconfigがされてない
+[Try] $ git config --listで表示されるか
+[Solution]
+$ git config --global user.name "John Doe"
+$ git config --global user.email johndoe@example.com
+```
+
+## DBマイグレーション
+
+アプリケーションのルートディレクトリに移動して以下のコマンドを実行
+```
+$ cd /home/vagrant/Apps/yukar.app
+$ bin/cake migrations migrate
+```
+
