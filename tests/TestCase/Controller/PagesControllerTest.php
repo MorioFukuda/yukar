@@ -28,6 +28,11 @@ use Cake\View\Exception\MissingTemplateException;
 class PagesControllerTest extends IntegrationTestCase
 {
 
+    public function testHoge()
+    {
+       $this->assertTrue(true);
+    }
+
     /**
      * testDisplay method
      *
