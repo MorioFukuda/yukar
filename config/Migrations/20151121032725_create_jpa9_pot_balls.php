@@ -15,25 +15,21 @@ class CreateJpa9PotBalls extends AbstractMigration
         $table = $this->table('jpa9_pot_balls');
         $table->addColumn('jpa9_shoot_log_id', 'integer', [
             'default' => null,
-            'signed' => false,
             'limit' => 11,
             'null' => false,
         ]);
         $table->addColumn('user_id', 'integer', [
             'default' => null,
-            'signed' => false,
             'limit' => 11,
             'null' => false,
         ]);
         $table->addColumn('ball_number', 'integer', [
             'default' => null,
-            'signed' => false,
             'limit' => 11,
             'null' => false,
         ]);
         $table->addColumn('pot_position', 'integer', [
             'default' => null,
-            'signed' => false,
             'limit' => 11,
             'null' => false,
         ]);

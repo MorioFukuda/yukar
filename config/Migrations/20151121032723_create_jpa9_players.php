@@ -15,19 +15,16 @@ class CreateJpa9Players extends AbstractMigration
         $table = $this->table('jpa9_players');
         $table->addColumn('user_id', 'integer', [
             'default' => null,
-            'signed' => false,
             'limit' => 11,
             'null' => false,
         ]);
         $table->addColumn('jpa9_game_id', 'integer', [
             'default' => null,
-            'signed' => false,
             'limit' => 11,
             'null' => false,
         ]);
         $table->addColumn('turn', 'integer', [
             'default' => null,
-            'signed' => false,
             'limit' => 11,
             'null' => false,
         ]);

@@ -15,37 +15,31 @@ class CreateJpa9ShootLogs extends AbstractMigration
         $table = $this->table('jpa9_shoot_logs');
         $table->addColumn('user_id', 'integer', [
             'default' => null,
-            'signed' => false,
             'limit' => 11,
             'null' => false,
         ]);
         $table->addColumn('jpa9_game_id', 'integer', [
             'default' => null,
-            'signed' => false,
             'limit' => 11,
             'null' => false,
         ]);
         $table->addColumn('lack', 'integer', [
             'default' => null,
-            'signed' => false,
             'limit' => 11,
             'null' => false,
         ]);
         $table->addColumn('enninge', 'integer', [
             'default' => null,
-            'signed' => false,
             'limit' => 11,
             'null' => false,
         ]);
         $table->addColumn('point', 'integer', [
             'default' => null,
-            'signed' => false,
             'limit' => 11,
             'null' => false,
         ]);
         $table->addColumn('in_a_row_count', 'integer', [
             'default' => null,
-            'signed' => false,
             'limit' => 11,
             'null' => false,
         ]);
